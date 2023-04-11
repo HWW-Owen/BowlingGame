@@ -21,6 +21,11 @@ public class BowlingGame {
                 if (isaSpare(ScoreIdx)) {
                     FinalScore += pins[ScoreIdx + 2];
                 }
+                if (isaStrike(ScoreIdx)) {
+                    FinalScore += pins[ScoreIdx + 1];
+                    FinalScore += pins[ScoreIdx + 2];
+                }
+
             }
         }
 
@@ -29,6 +34,10 @@ public class BowlingGame {
 
     private boolean isaSpare(int ScoreIdx) {
         return 10 == pins[ScoreIdx] + pins[ScoreIdx + 1];
+    }
+
+    private boolean isaStrike(int ScoreIdx) {
+        return 10 == pins[ScoreIdx];
     }
 
 
