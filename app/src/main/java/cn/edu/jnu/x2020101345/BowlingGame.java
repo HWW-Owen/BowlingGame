@@ -13,6 +13,7 @@ public class BowlingGame {
     public int score() {
         int FinalScore=0;
         int CurrentFrameScoreIdx=0;
+
         for(int CurrentFrame=0;CurrentFrame<10;CurrentFrame++)
         {
             FinalScore+=pins[CurrentFrameScoreIdx];
