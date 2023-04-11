@@ -24,6 +24,7 @@ public class BowlingGame {
                 FinalScore += pins[ CurrentFrameScoreIdx + 2];
             }
 
+
             else  if (isaSpare(CurrentFrameScoreIdx)) {
 
                 FinalScore += pins[CurrentFrameScoreIdx + 2];
