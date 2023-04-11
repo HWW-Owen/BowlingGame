@@ -48,7 +48,7 @@ public class BowlingGameUnitTest {
     public void test_AStrike()
     {
 
-        game.roll(10)
+        game.roll(10);
         game.roll(6);
         game.roll(2);
         repeatedRoll(2,16);
