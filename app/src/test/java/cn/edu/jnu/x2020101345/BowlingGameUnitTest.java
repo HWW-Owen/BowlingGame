@@ -55,6 +55,17 @@ public class BowlingGameUnitTest {
         assertEquals(58,game.score());
     }
 
+    @Test
+    public void test_FullStrike()
+    {
+
+        repeatedRoll(10,12);
+        assertEquals(300,game.score());
+    }
+
+
+
+
     private void rollAStrike() {
         game.roll(10);
     }

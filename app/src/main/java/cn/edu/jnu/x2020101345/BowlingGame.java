@@ -12,21 +12,28 @@ public class BowlingGame {
 
     public int score() {
         int FinalScore=0;
-        for(int ScoreIdx=0;ScoreIdx<pins.length;ScoreIdx++)
+        int CurrentFrameScoreIdx=0;
+        for(int CurrentFrame=0;CurrentFrame<10;CurrentFrame++)
         {
-            FinalScore+=pins[ScoreIdx];
+            FinalScore+=pins[CurrentFrameScoreIdx];
 
-
-            if(ScoreIdx<19) {
-                if (isaSpare(ScoreIdx)) {
-                    FinalScore += pins[ScoreIdx + 2];
-                }
-                if (isaStrike(ScoreIdx)) {
-                    FinalScore += pins[ScoreIdx + 1];
-                    FinalScore += pins[ScoreIdx + 2];
-                }
-
+            if (isaStrike( CurrentFrameScoreIdx)) {
+                FinalScore += pins[ CurrentFrameScoreIdx + 1];
+                FinalScore += pins[ CurrentFrameScoreIdx + 2];
             }
+
+            else  if (isaSpare(CurrentFrameScoreIdx)) {
+                FinalScore += pins[CurrentFrameScoreIdx + 1];
+                FinalScore += pins[CurrentFrameScoreIdx + 2];
+                CurrentFrameScoreIdx++;
+            }
+            else
+            {
+                FinalScore += pins[CurrentFrameScoreIdx + 1];
+                CurrentFrameScoreIdx++;
+            }
+            CurrentFrameScoreIdx++;
+
         }
 
         return FinalScore;
